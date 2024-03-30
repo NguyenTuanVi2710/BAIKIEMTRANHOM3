@@ -1,0 +1,50 @@
+<html >
+<head>
+    <title>Đồng hồ số</title>
+    <style>
+        body {
+            background-color: wheat;
+            color: #fff;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+
+        .digital-clock {
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            width: 400px;
+            background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    border: 2px solid #fff; 
+    border-radius: 0;
+}
+    </style>
+</head>
+<body>
+  <h1>
+    ĐỒNG HỒ SỐ
+  </h1>
+    <div class="clock">
+        <div class="digital-clock"></div>
+    </div>
+
+    <script>
+        const digitalClock = document.querySelector(".digital-clock");
+
+        setInterval(() => {
+            const date = new Date();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+
+            digitalClock.textContent = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+        }, 1000);
+    </script>
+</body>
+</html>

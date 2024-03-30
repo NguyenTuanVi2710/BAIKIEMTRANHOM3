@@ -1,0 +1,41 @@
+#footer{
+    width: 100%;
+    background: black;
+    height: 322px;
+    margin-top: 338px;
+    padding: 0px 63px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    color:aliceblue;
+  }
+  #footer .box{
+    width: 450px;
+  }
+  #footer .box h2{
+    font-size: 25px;
+    color:red;
+  }
+  #footer .box p{
+    font-size: 14px;
+  }
+ 
+ 
+  #footer .box form input{
+    width: 294px;
+    height: 42px;
+    background: white;
+    padding-left: 20px;
+    color:black;
+    margin-top: 10px;
+  }
+  #footer .box form button{
+    background: white;
+    box-shadow: 5px 5px 4px black;
+    width: 163px;
+    height: 38px;
+    margin-top: 29px;
+  }
+  #footer .box form button:hover {
+    background: red;
+  }

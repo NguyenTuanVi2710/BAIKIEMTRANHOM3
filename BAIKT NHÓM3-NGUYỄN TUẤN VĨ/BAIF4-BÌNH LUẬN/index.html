@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1 - Đánh giá sản phẩm</title>
+    <style>
+        .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: pink;
+}
+
+.danh-sach-binh-luan {
+    margin-top: 20px;
+}
+
+.binh-luan {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+ 	background: linear-gradient(to bottom, #A0E3F2 0%, #D3C0F9 100%);
+}
+
+.ten-nguoi-dung {
+    font-weight: bold;
+}
+
+.thoi-gian {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.them-binh-luan {
+    margin-top: 40px;
+    border: 1px solid #ddd;
+    padding: 20px;
+  	background: linear-gradient(to bottom, #A0E3F2 0%, #D3C0F9 100%);
+}
+
+.them-binh-luan h3 {
+    text-align: center;
+  color: pink;
+}
+
+.them-binh-luan input,
+.them-binh-luan textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.them-binh-luan button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Đánh giá sản phẩm</h1>
+        
+        <div class="them-binh-luan">
+            <h3>Thêm bình luận của bạn</h3>
+            <form action="#">
+                <input type="text" name="ten-nguoi-dung" placeholder="Tên của bạn">
+                <textarea name="noi-dung" placeholder="Nội dung bình luận"></textarea>
+                <button type="submit">Gửi bình luận</button>
+              <div class="danh-sach-binh-luan">
+            <div class="binh-luan">
+                <p class="ten-nguoi-dung"><b>@Yến Nhi</b></p>
+                <p class="thoi-gian"><i>21:56 Thứ 6 ngày 09/09/2021</i></p>
+                <p class="noi-dung">
+                    Đã mua đã sử dụng máy chạy êm cầm chawecs tay hơn cái trước mình sử dụng.
+                    Shop tư vấn nhiệt tình mùa dịch mà giao hàng vẫn nhanh. Ship thì quá ok
+                    luôn. Mình đã lỡ đặt địa chỉ nhà mẹ đẻ, đến khi gọi nhận hàng mình bảo là
+                    địa chỉ khác mà anh shipper vẫn rất vui vẻ... nói chung là tuyệt vời.
+                </p>
+            </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <script>
+    const formThemBinhLuan = document.querySelector(".them-binh-luan form");
+const danhSachBinhLuan = document.querySelector(".danh-sach-binh-luan");
+
+formThemBinhLuan.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+
+  const tenNguoiDung = event.target.querySelector("input[name='ten-nguoi-dung']").value;
+  const noiDung = event.target.querySelector("textarea[name='noi-dung']").value;
+
+
+  const thoiGianHienTai = new Date().toLocaleString();
+
+
+  const binhLuanMoi = document.createElement("div");
+  binhLuanMoi.classList.add("binh-luan");
+
+  binhLuanMoi.innerHTML = `
+    <p class="ten-nguoi-dung"><b>${tenNguoiDung}</b></p>
+    <p class="thoi-gian"><i>${thoiGianHienTai}</i></p>
+    <p class="noi-dung">${noiDung}</p>
+  `;
+  danhSachBinhLuan.appendChild(binhLuanMoi);
+
+
+  event.target.querySelector("textarea[name='noi-dung']").value = "";
+});
+    </script>
+</body>
+</html>
